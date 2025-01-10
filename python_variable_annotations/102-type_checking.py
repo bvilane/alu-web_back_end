@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 '''Type Checking'''
-from typing import List, Tuple, Union
+from typing import Sequence, List, Union
 
 
-def zoom_array(lst: List[Union[int, float]], factor: int = 2) -> List[Union[int, float]]:
+def zoom_array(lst: Sequence[Union[int, float]], factor: int = 2) -> List[Union[int, float]]:
     """Function to zoom in an array by duplicating its elements."""
     zoomed_in: List[Union[int, float]] = [
         item for item in lst
