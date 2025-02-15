@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
-''' Flask app '''
-
+"""
+0x0A. i18n
+"""
+from os import getenv
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"], strict_slashes=False)
-def hello_world():
-    ''' return the template '''
-    return render_template('0-index.html')
+@app.route('/')
+def index():
+    """hello world"""
+    return render_template("0-index.html", message="Welcome to Holberton")
 
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    host = getenv("API_HOST", "0.0.0.0")
+    port = getenv("API_PORT", "5000")
+    app.run(host=host, port=port)
